@@ -1,5 +1,5 @@
 [package]
-name = "torc_dns_scheduler"
+name = "torc_sub_scheduler"
 version = "0.1.0"
 authors = ["Marcel Neuhausler <neuhausler@gmail.com>"]
 
