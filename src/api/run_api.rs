@@ -21,9 +21,9 @@
 // THE SOFTWARE.
 
 use state::StateManager;
-use iron::{Iron, IronResult, Request, Response};
 use iron::mime::{Mime, SubLevel, TopLevel};
 use hyper::header::AccessControlAllowOrigin;
+use iron::prelude::*;
 use iron::status;
 use router::Router;
 use std::sync::Mutex;

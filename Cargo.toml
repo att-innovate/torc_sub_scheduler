@@ -8,22 +8,22 @@ git = "https://github.com/att-innovate/mesos-rs.git"
 version = "0.3.1"
 
 [dependencies.protobuf]
-version = "1.0.18"
+version = "1.0.23"
 
 [dependencies.iron]
-version = "*"
+version = "0.3.0"
 
 [dependencies.router]
-version = "*"
+version = "0.1.1"
 
 [dependencies.hyper]
-version = "*"
+version = "0.8.1"
 
 [dependencies.clap]
-version = "*"
+version = "2.9.2"
 
 [dependencies.yaml-rust]
-version = "*"
+version = "0.3.3"
 
 [dependencies.rustc-serialize]
 version = "0.3"
@@ -35,4 +35,4 @@ version = "0.1"
 version = "0.2"
 
 [dependencies.lazy_static]
-version = "0.1.*"
+version = "0.2.1"
