@@ -1,0 +1,38 @@
+[package]
+name = "torc_dns_scheduler"
+version = "0.1.0"
+authors = ["Marcel Neuhausler <neuhausler@gmail.com>"]
+
+[dependencies.mesos]
+git = "https://github.com/att-innovate/mesos-rs.git"
+version = "0.3.1"
+
+[dependencies.protobuf]
+version = "1.0.18"
+
+[dependencies.iron]
+version = "*"
+
+[dependencies.router]
+version = "*"
+
+[dependencies.hyper]
+version = "*"
+
+[dependencies.clap]
+version = "*"
+
+[dependencies.yaml-rust]
+version = "*"
+
+[dependencies.rustc-serialize]
+version = "0.3"
+
+[dependencies.uuid]
+version = "0.1"
+
+[dependencies.chrono]
+version = "0.2"
+
+[dependencies.lazy_static]
+version = "0.1.*"

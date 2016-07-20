@@ -1,0 +1,62 @@
+name: torc-dns-scheduler
+nodes:
+nodes:
+    - name: wedge
+      ip: $MASTER_IP
+      type: master
+    - name: bladerunner1
+      ip: 10.250.3.21
+      type: slave
+    - name: bladerunner2
+      ip: 10.250.3.22
+      type: slave
+    - name: bladerunner3
+      ip: 10.250.3.23
+      type: slave
+    - name: bladerunner4
+      ip: 10.250.3.24
+      type: slave
+statesync:
+    poll_interval_in_seconds: 10
+healthcheck:
+    poll_interval_in_seconds: 15 
+    system_services:
+            - name: dns-sl1
+              image_name: bind9
+              node_name: bladerunner1
+              is_metered: true
+              network_type: torc
+api:
+    service-groups:
+        - name: dns-sl2
+          services:
+            - name: dns-sl2
+              image_name: bind9
+              node_name: bladerunner2
+              is_metered: true
+              network_type: torc
+        - name: normalload200
+          services:
+            - name: normalload200
+              image_name: normalload
+              node_name: bladerunner3
+              memory: 50.0
+              arguments: -u 200 -m 1000 -d 800 
+              is_metered: true
+              network_type: torc
+        - name: normalload400
+          services:
+            - name: normalload400
+              image_name: normalload
+              node_name: bladerunner3
+              memory: 50.0
+              arguments: -u 400 -m 1000 -d 800 
+              is_metered: true
+              network_type: torc
+        - name: smartscaling
+          services:
+            - name: smartscaling
+              image_name: smartscaling
+              node_name: bladerunner3
+              memory: 1024.0
+              network_type: torc
